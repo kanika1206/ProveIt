@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+psycopg2-binary
+redis
+python-jose[cryptography]
+bcrypt==4.0.1
+passlib
+groq
+aiofiles
+pydantic[email]
+pydantic-settings
+torch
+numpy
+python-multipart
+websockets

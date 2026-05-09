@@ -1,0 +1,15 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.env
+*.env
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+.DS_Store
+Thumbs.db
+*.log
+redis-dump.rdb
