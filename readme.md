@@ -1,14 +1,14 @@
 # ProveIt
 
 I'm at IIT Jammu and watched people with stronger skills get filtered out in 
-placements purely because of their GPA. Spent 3 months building something about it.
+placements purely because of their GPA.
 
-During my BTP I was working on wireless federated learning and that's where I got 
+During my BTP I was working on federated learning and that's where I got 
 into the crypto and privacy side of things. Poseidon hashing, ZK proofs, 
 differential privacy started making sense as tools I could actually use. 
 So I combined both problems into one project.
 
-**Live demo** → https://proveit-frontend.onrender.com  
+**Live demo** → https://prove-it-phi.vercel.app/  
 **API docs** → https://proveit-backend.onrender.com/docs
 
 ---
