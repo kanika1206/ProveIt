@@ -1,15 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
   async rewrites() {
     return [
       {
         source: '/api/:path*',
-        destination: 'http://localhost:8000/api/:path*',
+        destination: 'https://proveit-backend.onrender.com/api/:path*',
       },
       {
         source: '/ws/:path*',
-        destination: 'http://localhost:8000/ws/:path*',
+        destination: 'https://proveit-backend.onrender.com/ws/:path*',
       },
     ]
   },

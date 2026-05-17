@@ -62,7 +62,7 @@ class Settings(BaseSettings):
     port: int = Field(default=8000)
     debug: bool = Field(default=True)
     allowed_origins: list[str] = Field(
-    default=["http://localhost:3000", "http://127.0.0.1:3000", "https://proveit-frontend.onrender.com"]
+    default=["http://localhost:3000", "http://127.0.0.1:3000", "https://prove-it-phi.vercel.app"]
 )
     # Differential Privacy 
     dp_epsilon: float = Field(default=1.0)
