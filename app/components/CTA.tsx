@@ -3,54 +3,60 @@
 import { ArrowRight } from "lucide-react";
 
 const testimonials = [
-  { quote: "I had a 6.8 CGPA. ProveIt got me a FAANG interview.", name: "Rohit S.", college: "VIT Vellore" },
-  { quote: "Finally something that shows I can actually code.", name: "Ananya M.", college: "NSIT Delhi" },
-  { quote: "The ZK proof thing sounds scary but it just works.", name: "Karan P.", college: "BITS Pilani" },
+  { quote: "I had a 6.8 CGPA. ProveIt got me a FAANG interview.", name: "Rohit S.",   college: "VIT Vellore" },
+  { quote: "Finally something that shows I can actually code.",    name: "Ananya M.",  college: "NSIT Delhi" },
+  { quote: "The ZK proof thing sounds scary but it just works.",   name: "Karan P.",   college: "BITS Pilani" },
 ];
 
 export default function CTA() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-20">
+    <section style={{ background: 'var(--cream)', borderBottom: '2px solid var(--ink)' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 24px' }}>
 
-      {/* Testimonials */}
-      <div className="grid md:grid-cols-3 gap-4 mb-16">
-        {testimonials.map(({ quote, name, college }) => (
-          <div key={name} className="bg-gray-50 border border-gray-100 rounded-2xl p-6">
-            <p className="text-[15px] text-gray-700 leading-relaxed mb-5">"{quote}"</p>
-            <div>
-              <p className="text-[13px] font-semibold text-gray-900">{name}</p>
-              <p className="text-[12px] text-gray-400">{college}</p>
+        {/* Testimonials */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 16, marginBottom: 64 }}>
+          {testimonials.map(({ quote, name, college }) => (
+            <div key={name} className="card-stamp">
+              <p style={{ fontFamily: 'var(--font-serif)', fontSize: 16, color: 'var(--ink)', lineHeight: 1.65, marginBottom: 16, fontStyle: 'italic' }}>
+                "{quote}"
+              </p>
+              <div style={{ borderTop: '1px solid var(--border-light)', paddingTop: 12 }}>
+                <p style={{ fontFamily: 'var(--font-sans)', fontSize: 13, fontWeight: 700, color: 'var(--ink)' }}>{name}</p>
+                <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 2 }}>{college}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* CTA block */}
-      <div className="bg-gray-950 rounded-3xl px-10 py-16 text-center relative overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-40 bg-teal-500/10 rounded-full blur-3xl" />
-        <div className="relative z-10">
-          <h2 className="text-[36px] md:text-[44px] font-bold text-white leading-tight tracking-tight mb-4">
-            You're more skilled than<br />your CGPA shows.
-          </h2>
-          <p className="text-[16px] text-gray-400 leading-relaxed mb-8 max-w-lg mx-auto">
-            One assessment. One link. Let the proof speak for itself.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <a
-              href="/signup"
-              className="inline-flex items-center gap-2 bg-teal-500 hover:bg-teal-400 text-white text-[15px] font-semibold px-7 py-3.5 rounded-xl transition-colors"
-            >
-              Prove your skills <ArrowRight size={16} />
-            </a>
-            <a
-              href="/leaderboard"
-              className="inline-flex items-center gap-2 text-[15px] text-gray-400 hover:text-white px-7 py-3.5 rounded-xl border border-gray-700 hover:border-gray-500 transition-colors"
-            >
-              See the leaderboard
-            </a>
-          </div>
-          <p className="text-[12px] text-gray-600 mt-6">Free. No card required. Works at any college.</p>
+          ))}
         </div>
+
+        {/* CTA box */}
+        <div style={{ background: 'var(--ink)', padding: '64px 48px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+          {/* Accent glow */}
+          <div style={{ position: 'absolute', top: -60, left: '50%', transform: 'translateX(-50%)', width: 400, height: 200, background: 'var(--accent-glow)', borderRadius: '50%', filter: 'blur(40px)' }} />
+
+          <div style={{ position: 'relative' }}>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', color: 'var(--accent)', marginBottom: 16 }}>
+              Ready to prove it?
+            </p>
+            <h2 style={{ fontFamily: 'var(--font-serif)', fontWeight: 900, fontSize: 'clamp(32px,4vw,50px)', color: 'var(--cream)', lineHeight: 1.08, letterSpacing: '-0.02em', marginBottom: 16 }}>
+              You're more skilled than<br />your CGPA shows.
+            </h2>
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 16, color: 'var(--cream-darker)', lineHeight: 1.7, marginBottom: 32, maxWidth: 440, margin: '0 auto 32px' }}>
+              One assessment. One link. Let the proof speak for itself.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 12, flexWrap: 'wrap' }}>
+              <a href="/signup" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                Prove your skills <ArrowRight size={14} />
+              </a>
+              <a href="/leaderboard" className="btn" style={{ background: 'transparent', color: 'var(--cream-dark)', border: '2px solid #2a2a2a', borderRadius: 100 }}>
+                See the leaderboard
+              </a>
+            </div>
+            <p style={{ fontFamily: 'var(--font-mono)', fontSize: 10, color: '#4b5563', textTransform: 'uppercase', letterSpacing: '0.1em', marginTop: 20 }}>
+              Free · No card required · Works at any college
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
   );

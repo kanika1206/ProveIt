@@ -15,61 +15,60 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="navbar sticky top-0 z-50">
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 24px', height: 60, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
 
-        <a href="/" className="flex items-center gap-2.5 group">
-          <div className="w-8 h-8 rounded-xl bg-teal-600 flex items-center justify-center rotate-3 group-hover:rotate-0 transition-transform duration-200">
-            <ShieldCheck size={17} className="text-white" />
+        {/* Logo */}
+        <a href="/" style={{ display: 'flex', alignItems: 'center', gap: 8, textDecoration: 'none' }}>
+          <div style={{ width: 30, height: 30, borderRadius: 8, background: 'var(--accent)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <ShieldCheck size={16} color="#ffffff" />
           </div>
-          <span className="font-bold text-[18px] text-gray-900 tracking-tight">
-            Prove<span className="text-teal-600">It</span>
+          <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 800, fontSize: 18, color: 'var(--ink)', letterSpacing: '-0.02em' }}>
+            Prove<span style={{ color: 'var(--accent)' }}>It</span>
           </span>
         </a>
 
-        <div className="hidden md:flex items-center gap-1">
+        {/* Desktop links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 2 }}>
           {navLinks.map(({ label, href }) => (
-            <a
-              key={label}
-              href={href}
-              className="px-4 py-2 text-[14px] text-gray-500 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
-            >
+            <a key={label} href={href} className="btn btn-ghost" style={{ fontSize: 13 }}>
               {label}
             </a>
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
-          <a href="/login" className="text-[14px] text-gray-600 hover:text-gray-900 transition-colors">
+        {/* Desktop right */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <a href="/login" style={{ fontFamily: 'var(--font-sans)', fontSize: 13, color: 'var(--text-secondary)', textDecoration: 'none' }}>
             Sign in
           </a>
-          <a
-            href="/signup"
-            className="px-4 py-2 rounded-xl bg-gray-900 text-[14px] text-white font-medium hover:bg-gray-700 transition-colors"
-          >
+          <a href="/signup" className="btn btn-primary" style={{ fontSize: 13, padding: '8px 20px' }}>
             Try for free →
           </a>
         </div>
 
+        {/* Mobile hamburger */}
         <button
-          className="md:hidden p-1.5 rounded-lg text-gray-600"
           onClick={() => setOpen(!open)}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6 }}
           aria-label="Toggle menu"
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={20} color="var(--ink)" /> : <Menu size={20} color="var(--ink)" />}
         </button>
+
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-gray-100 bg-white px-6 py-5 flex flex-col gap-1">
+        <div style={{ borderTop: '1px solid var(--border)', background: '#ffffff', padding: '16px 24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
           {navLinks.map(({ label, href }) => (
-            <a key={label} href={href} className="py-2.5 text-[15px] text-gray-600 hover:text-gray-900 border-b border-gray-50">
+            <a key={label} href={href} style={{ fontFamily: 'var(--font-sans)', fontSize: 15, color: 'var(--text-secondary)', padding: '10px 0', borderBottom: '1px solid var(--border-light)', textDecoration: 'none' }}>
               {label}
             </a>
           ))}
-          <div className="flex gap-2 pt-4">
-            <a href="/login" className="flex-1 text-center py-2.5 rounded-xl border border-gray-200 text-[14px] text-gray-700">Sign in</a>
-            <a href="/signup" className="flex-1 text-center py-2.5 rounded-xl bg-gray-900 text-[14px] text-white font-medium">Try for free</a>
+          <div style={{ display: 'flex', gap: 8, paddingTop: 16 }}>
+            <a href="/login" className="btn btn-secondary" style={{ flex: 1, justifyContent: 'center', fontSize: 13 }}>Sign in</a>
+            <a href="/signup" className="btn btn-primary" style={{ flex: 1, justifyContent: 'center', fontSize: 13 }}>Try for free</a>
           </div>
         </div>
       )}
