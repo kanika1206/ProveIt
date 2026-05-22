@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Features", href: "#features" },
   { label: "Rankings", href: "/leaderboard" },
   { label: "Placement Intel", href: "/intel" },
-  { label: "For Employers", href: "/employers" },
+  { label: "For Employers", href: "#employers" },
 ];
 
 export default function Navbar() {
